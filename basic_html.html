@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Character Encode-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- รองรับการแสดงผลบน device อื่น-->
+    <title>Basic HTML</title>
+    <style>
+        div{
+            border :2px solid darkgreen;
+            color: olive
+        }
+        span{
+            border:2px solid maroon;
+            color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <!-- tag -->
+    <h1>h1</h1>
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <h4>h4</h4>
+    <h5>h5</h5>
+    <h6>h6</h6>
+    <p>
+        <small>small</small>
+        <strong>strong</strong>
+        <b>b</b> 
+        <i>i</i> 
+        <u>u</u>
+        <del>del</del> 
+        <mark>mark</mark> 
+        <sup>sup</sup> 
+        <sub>sub</sub>
+        <br> br
+        <hr> hr
+    </p>
+    <a href="https://www.google.com/" target="_blank"> Google </a> <!-- target="_blank" คือ เปิดแท็บใหม่-->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="html logo" width="150px" height="150px">
+    <!-- tag -->
+
+    <!-- การแสดงรายการ list--> <br>
+    แบบ ol
+    <ol type="i">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ol>
+    แบบ ul
+    <ul type="circle">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3
+            <ul type="disc">
+                <li>item3.1</li>
+                <li>item3.2</li>
+            </ul>
+        </li>
+    </ul>
+    <!-- การแสดงรายการ list--> 
+
+    <!--ตาราง Table -->
+    <table border="1" width="50%" cellpadding="10" cellspacing="5">
+        <thead bgcolor="yellow">
+            <th>รหัสสินค้า</th>
+            <th>ชื่อสินค้า</th>
+            <th>ราคาสินค้า</th>
+            <th>ดำเนินการ</th>
+        </thead>
+        <tbody align="center">
+            <tr>
+                <td>ID001</td>
+                <td>Product001</td>
+                <td>500.00</td>
+                <td><button>แก้ไข</button> <button>ลบ</button></td>
+            </tr>
+            <tr>
+                <td>ID002</td>
+                <td>Product002</td>
+                <td>1,000.00</td>
+                <td><button>แก้ไข</button> <button>ลบ</button></td>
+            </tr>
+        </tbody>
+        <tfoot align="center">
+            <tr>
+                <td colspan="2" rowspan="2">จำนวนทั้งหมด 2</td>
+                <td colspan="2">ราคารวม 1,500.00</td>
+            </tr>
+            <tr>
+                <td colspan="2">หนึ่งพันห้าร้อยบาทถ้วน</td>
+            </tr>
+        </tfoot>
+    </table>
+    <!--ตาราง Table -->
+
+    <!-- การจัดกลุ่ม div(เต็มพื้นที่,ขึ้นบรรทัดใหม่) span(ตามเนื้อหา,ต่อบรรทัดเดิม)-->
+    <span>Lorem ipsum dolor sit.</span>
+    <span>Lorem ipsum dolor sit.</span>
+    <div>Lorem ipsum dolor sit.</div>
+    <div>Lorem ipsum dolor sit.</div>
+    <!-- การจัดกลุ่ม div(เต็มพื้นที่,ขึ้นบรรทัดใหม่) span(ตามเนื้อหา,ต่อบรรทัดเดิม)-->
+</body>
+</html>
