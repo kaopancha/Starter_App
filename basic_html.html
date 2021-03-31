@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8"> <!-- Character Encode-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- รองรับการแสดงผลบน device อื่น-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Basic HTML</title>
     <style>
-        div{
+        .divclass{
             border :2px solid darkgreen;
             color: olive
         }
-        span{
+        .spanclass{
             border:2px solid maroon;
             color: darkred;
+        }
+        #divid{
+            color:forestgreen;
+        }
+        #spanid{
+            color:crimson;
+        }
+        .submitbut{
+            color : white;
+            background-color: darkolivegreen;
         }
     </style>
 </head>
@@ -95,10 +106,138 @@
     <!--ตาราง Table -->
 
     <!-- การจัดกลุ่ม div(เต็มพื้นที่,ขึ้นบรรทัดใหม่) span(ตามเนื้อหา,ต่อบรรทัดเดิม)-->
-    <span>Lorem ipsum dolor sit.</span>
-    <span>Lorem ipsum dolor sit.</span>
-    <div>Lorem ipsum dolor sit.</div>
-    <div>Lorem ipsum dolor sit.</div>
+    <span class="spanclass">Lorem ipsum dolor sit.</span>
+    <span class="spanclass" id="spanid">Lorem ipsum dolor sit.</span>
+    <div class="divclass">Lorem ipsum dolor sit.</div>
+    <div class="divclass" id="divid">Lorem ipsum dolor sit.</div>
     <!-- การจัดกลุ่ม div(เต็มพื้นที่,ขึ้นบรรทัดใหม่) span(ตามเนื้อหา,ต่อบรรทัดเดิม)-->
+
+    <!-- ฟอร์ม Form -->
+    <h3 align="center">แบบฟอร์มลงทะเบียน</h3>
+    <form>
+        <!-- text/number -->
+        <div>
+            <label for="firstname">ชื่อจริง </label>
+            <input type="text" name="fname" placeholder="ป้อนชื่อจริงของคุณ">
+        </div>
+        <div>
+            <label for="lastname">นามสกุล </label>
+            <input type="text" name="lname" placeholder="ป้อนนามสกุลของคุณ">
+        </div>
+        <div>
+            <label for="email">อีเมล์ </label>
+            <input type="email" name="email" placeholder="example@hotmail.com" required>
+        </div>
+        <div>
+            <label for="password">รหัสผ่าน </label>
+            <input type="password" name="pass" placeholder="ป้อนรหัสผ่านไม่ต่ำกว่า 8 ตัวอักษร" required>
+        </div>
+        <div>
+            <label for="address">ที่อยู่ </label>
+            <textarea name="address" cols="100" rows="5" placeholder="ป้อนที่อยู่" readonly>กรุงเทพฯ</textarea> 
+        </div>
+        <div>
+            <label for="age">อายุ </label>
+            <input type="number" name="age" min="0" max="100" value="0">
+        </div>
+        <div>
+            <label for="dateofbirth">วันเกิด </label>
+            <input type="date" name="dob">
+        </div>
+        <div>
+            <label for="tel">เบอร์โทร </label>
+            <input type="tel" name="tel" minlength="9" maxlength="10">
+        </div>
+        <div>
+            <label for="color">เลือกสี </label>
+            <input type="color" name="color">
+        </div>
+        <div>
+            <label for="rangenum">ช่วงตัวเลข </label>
+            <input type="range" name="rangenum" value="80">
+        </div>
+        <!-- text/number -->
+
+        <!-- option -->
+        <div>
+            <label for="education">ระดับการศึกษา </label>
+            <select name="edu" id="">
+                <option value="มัธยมศึกษา">มัธยมศึกษา</option>
+                <option value="ปริญญาตรี" selected>ปริญญาตรี</option>
+                <option value="ปริญญาโท">ปริญญาโท</option>
+                <option value="ปริญญาเอก">ปริญญาเอก</option>
+            </select>
+        </div>
+        <div>
+            <label for="gender">เพศ </label>
+            <input type="radio" name="gender">เพศชาย
+            <input type="radio" name="gender">เพศหญิง
+            <input type="radio" name="gender">อื่น ๆ (ระบุ)
+            <input type="text" name="genderother">
+        </div>
+        <div>
+            <label for="job">ตำแหน่งที่สนใจ </label>
+            <input type="checkbox" name="job">IT
+            <input type="checkbox" name="job">การตลาด
+            <input type="checkbox" name="job">บัญชี
+            <input type="radio" name="job">อื่น ๆ (ระบุ)
+            <input type="text" name="jobother">
+        </div>
+        <!-- option -->
+
+        <!-- file/url -->
+        <div>
+            <label for="doc">แนบเอกสาร </label>
+            <input type="file" accept="image/*,.doc,.pdf">
+        </div>
+        <div>
+            <label for="web">เว็บไซต์ </label>
+            <input type="url" placeholder="http://www.example.com">
+        </div>
+        <!-- file/url -->
+
+        <!-- button -->
+        <div>
+            <input type="submit" value="บันทึกข้อมูล">
+            <button type="submit" class="submitbut">บันทึกข้อมูล</button>
+        </div>
+        <div>
+            <input type="reset" value="ล้างข้อมูล">
+            <button type="reset">ล้างข้อมูล</button>
+        </div>
+        <!-- button -->
+    </form>
+    <!-- ฟอร์ม Form -->
+
+    <!--อักขระพิเศษ HTML Entity-->
+    <h3>Lorem &nbsp; &nbsp; &nbsp; ipsum &nbsp; &nbsp; &nbsp; dolor.</h3> <!-- เพิ่มเว้นวรรค -->
+    <h3>3&lt;5&gt;2</h3>
+    <h3>&empty; ห้ามใช้งาน</h3>
+    <h3>&copy; copyright</h3>
+    <h3>&reg; เครื่องหมายการค้า</h3>
+    <h3>&yen; หน่วยเงินเยน</h3>
+    <h3>&euro; หน่วยเงินยูโร</h3>
+    <h3>
+        <code>
+            &lt;?php echo "Hello World" ?&gt;
+        </code>
+        <kbd>
+            Ctrl+S
+        </kbd>
+    </h3>
+    <br>
+    <a href="https://dev.w3.org/html5/html-author/charref">more Entity</a>
+    <!--อักขระพิเศษ HTML Entity-->
+
+    <!-- ใส่ video/audio-->
+    <video controls width="320px" height="180">
+        <source src="video/viedo1.mp4" type="video/mp4">
+    </video>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/0hfeNPM7piw?start=15286" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <audio controls autoplay>
+        <source src="audio/audio1.mp3" type="audio/mp3">
+    </audio>
+    <!-- ใส่ video/audio-->
 </body>
 </html>
