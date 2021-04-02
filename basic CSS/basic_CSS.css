@@ -1,0 +1,168 @@
+/*หน่วยใน CSS
+px pixel โดย 1px = 0.75pt สัมพันธ์กับรายละเอียดหน้าจอ
+pt point โดย 1pt = 1/72 inches ใช้ในงานสิ่งพิมพ์
+cm เซนติเมตร
+mm มิลลิเมตร
+in inches โดย 1in = 96px = 2.54cm 
+pc picas โดย 1pc = 12 pt
+
+% มักใช้กับความกว้าง ความสูง
+em อ้างอิงจาก parent ใกล้สุด เช่น เริ่มต้น 10px --> 2em = 20px
+rem อ้างอิงจาก root (ตัวครอบนอกสุด)
+vw 1% width ของ browser
+vh 1% height ของ browser
+vmin , vmax กำหนดสูงสุด ต่ำสุด ของ viewport
+*/
+
+/* tag */
+h1{
+    color: crimson;
+}
+/* class */
+.title{
+    color: darkolivegreen;
+}
+/* id */
+#title{
+    color: peru;
+}
+/* multiple */
+.title,#title{
+    font-style: italic;
+}
+/* เฉพาะ class title ใน tag h1 */
+h1.title{
+    font-size: 50px;
+}
+/* เฉพาะ id title ใน tag h1 */
+h1#title{
+    font-size: 70px;
+}
+/* universal (ตัว * ) มีผลต่อทุก tag */
+*{
+    font-size: 20px;
+    box-sizing: border-box; /* ทุก element รวมกันได้ค่าตามที่ระบุ */
+}
+
+/* ทดสอบกำหนดขนาด */
+.box1{
+    width: 100%;
+    font-size: 50px;
+    background-color: teal;
+}
+.box2{
+    width: 50%;
+    font-size: 0.75em;
+    background-color: tomato;
+}
+.box3{
+    width: 50%;
+    font-size: 0.75em;
+    background-color: darkgoldenrod;
+}
+
+/* รูปแบบ ขนาด น้ำหนัก สี พื้นหลัง สไตล์ ลักษณะ fonts */
+.font1{
+    font-family: monospace;
+    font-size: xx-large;
+    font-weight: bolder;
+    color: darkred;
+    background-color: thistle;
+    font-style: oblique;
+    text-decoration: underline;
+}
+.font2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: #DDA0DD;
+    background-color: #483D8B;
+    font-style: italic;
+    text-decoration: line-through;
+}
+.googlefonts{
+    font-family: 'Mystery Quest', cursive;
+    font-size: 30px;
+}
+
+/* การจัดแนวข้อความ */
+.textalign1{
+    text-align: left; /* right center justify(กระจาย) */
+}
+
+/* กำหนดกว้างสูง ต่ำสุดสูงสุด กำหนดขอบ(รูปแบบ สี ขนาด มุม)*/
+.img1{
+    width: 50%;
+    height: 300px;
+    min-width: 200px;
+    max-height: 500px;
+}
+.div1{
+    background-color: seagreen;
+    width: 100px;
+    height: 100px;
+    border: solid 5px black;
+}
+.div2{
+    background-color: seagreen;
+    width: 100px;
+    height: 100px;
+    border: dotted 5px crimson;
+}
+.div3{
+    background-color: seagreen;
+    width: 100px;
+    height: 100px;
+    border-style: double;
+    border-color: crimson;
+    border-width: 5px;
+    border-left-width: 20px;
+    border-radius: 10px 20px 30px 40px;
+}
+
+/* Box Model (padding คือ เนื้อหาด้านในกับขอบวัตถุ margin คือ ระยะห่างกับวัตถุอื่น สี(ภาพ)พื้นหลัง)*/
+.boxall{
+    text-align: center;
+    border: solid 5px saddlebrown;
+    background-color: tan;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+.box10{
+    margin: 20px 30px 40px 50px; /* top right bottom left */
+    padding: 10px 20px 30px 40px;
+}
+body{
+    background-image: url(https://cdn.pixabay.com/photo/2018/08/15/13/10/galaxy-3608029_960_720.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100%;
+}
+
+/* กำหนดวัตถุลอยซ้าย ขวา float clear(ไม่อนุญาตให้มีการลอย) */
+.container{
+    width: 960px;
+    margin: 30px auto;
+}
+.box{
+    background-color: antiquewhite;
+    border: solid 1px black;
+    margin-bottom: 20px;
+}
+.box12{
+    float: left;
+    width: 30%;
+}
+.box13{
+    float: right;
+    width: 70%;
+}
+.clr{
+    clear: both;
+}
+
+
+
+
