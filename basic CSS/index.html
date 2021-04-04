@@ -14,7 +14,7 @@
 <body>
     <!-- id > class > tag -->
     <h1>Basic CSS Learning (tag)</h1>
-    <h1 class="title">Basic CSS Learning (class)</h1>
+    <h1 class="title" >Basic CSS Learning (class)</h1>
     <h1 id="title">Basic CSS Learning (id)</h1>
     
     <div class="box1">
@@ -27,6 +27,7 @@
         </div>
     </div>
     
+    <!-- Font -->
     <p class="font1">Single Font</p>
     <p class="font2">Multi Fonts</p>
     <p class="boxall"><a href="https://fonts.google.com/" class="googlefonts">Google Fonts</a></p>
@@ -42,10 +43,12 @@
     </p>
     <img src="https://cdn.pixabay.com/photo/2014/04/13/20/49/cat-323262_960_720.jpg" alt="" class="img1">
 
+    <!-- Object -->
     <div class="div1"></div><br>
     <div class="div2"></div><br>
     <div class="div3"></div>
 
+    <!-- Box -->
     <div class="boxall box10">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae veritatis eaque incidunt libero sed magni nostrum ipsam, saepe praesentium, officia tempore eius nemo, dolore in laudantium ullam. Magnam, nulla autem!
     </div>
@@ -56,7 +59,6 @@
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta, perspiciatis!
     </div>
 
-    
     <div class="container">
         <div class="box11 box">
             <h1>Box11</h1>
@@ -76,6 +78,72 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, accusantium.</p>
         </div>  
     </div>
+
+    <!--link style / Display -->
+    <ul>
+        <li class="li-style"><a href="/home" class="noneline">Home</a></li>
+        <li class="li-style"><a href="http://www.google.com" class="noneline">Google</a></li>
+        <li class="li-style"><a href="http://www.facebook.com" class="noneline">Facebook</a></li>
+        <li class="li-style"><a href="#" class="noneline">About</a></li>
+    </ul>
+    <hr>
+    <div class="displaybox">
+        <h1>Title1</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, a. Commodi, et natus autem error nesciunt eos assumenda expedita neque doloribus unde at beatae harum accusantium possimus temporibus nam provident!</p>
+    </div>
+    <div class="displaybox">
+        <h1>Title2</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, a. Commodi, et natus autem error nesciunt eos assumenda expedita neque doloribus unde at beatae harum accusantium possimus temporibus nam provident!</p>
+    </div>
+    <div class="displaybox">
+        <h1>Title3</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, a. Commodi, et natus autem error nesciunt eos assumenda expedita neque doloribus unde at beatae harum accusantium possimus temporibus nam provident!</p>
+    </div>
+
+    <!-- visibility -->
+    <div class="boxall">
+        <img id="hidden-img1" src="https://cdn.pixabay.com/photo/2014/04/13/20/49/cat-323262_960_720.jpg" alt="" class="img1 img-invis">
+        <img src="https://cdn.pixabay.com/photo/2014/04/13/20/49/cat-323262_960_720.jpg" alt="" class="img1">
+        <p style="font-size: 20px;">visibility</p>
+        <button onclick="showimg(document.getElementById('hidden-img1').id)">คลิกเพื่อแสดงรูปที่ซ่อน</button>
+    </div>
+
+    <!-- position -->
+    <div id="posbox-1" class="pos-box"></div>
+    <div class="pos-container">
+        <div id="posbox-2" class="pos-box"></div>
+        <div id="posbox-3" class="pos-box"></div>
+    </div>
+    <div id="posbox-4" class="pos-box">
+        <button class="posbox-close" onclick="boxclose(document.getElementById('posbox-4').id)">X</button>
+    </div>
+    <div id="posbox-5" class="pos-box">
+        <button class="posbox-close" onclick="boxclose(document.getElementById('posbox-5').id)">X</button>
+    </div>
+    <br>
+
+    <!-- overflow -->
+    <div class="flow-div">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur repellat inventore vel cupiditate doloribus corrupti amet animi sapiente aspernatur, iste facere ex qui alias, nobis earum excepturi aliquid maiores, impedit aliquam odit eveniet tenetur. Esse animi nihil illo necessitatibus obcaecati, sequi dolorum ipsam qui ducimus atque culpa quae officiis quaerat.
+    </div>
     
+    <!-- cursor style / box-shadow / opacity-->
+    <div>
+        <h1>cursor style / box-shadow / opacity</h1>
+    <img src="https://cdn.pixabay.com/photo/2020/03/19/23/32/willow-catkin-4949064_960_720.jpg" alt="" class="img2 hovercursor boxshadow1 boxopacity1">
+    <img src="https://cdn.pixabay.com/photo/2020/03/19/23/32/willow-catkin-4949064_960_720.jpg" alt="" class="img2 hovercursor boxshadow1 boxopacity2">
+    </div>
+
+    <!-- Javascript-->
+    <script type="text/javascript">
+        //แสดงรูปที่ซ่อน
+        function showimg(imgid){
+            document.getElementById(imgid).style.visibility = 'visible'
+        }
+        //ปิด posbox 4 5
+        function boxclose(boxid){
+            document.getElementById(boxid).style.visibility = 'hidden'
+        }
+    </script>
 </body>
 </html>

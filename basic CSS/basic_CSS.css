@@ -40,8 +40,8 @@ h1#title{
 }
 /* universal (ตัว * ) มีผลต่อทุก tag */
 *{
-    font-size: 20px;
-    box-sizing: border-box; /* ทุก element รวมกันได้ค่าตามที่ระบุ */
+    /* ทุก element รวมกันได้ค่าตามที่ระบุ */
+    box-sizing: border-box; 
 }
 
 /* ทดสอบกำหนดขนาด */
@@ -92,10 +92,11 @@ h1#title{
 
 /* กำหนดกว้างสูง ต่ำสุดสูงสุด กำหนดขอบ(รูปแบบ สี ขนาด มุม)*/
 .img1{
-    width: 50%;
+    width: 30%;
     height: 300px;
     min-width: 200px;
     max-height: 500px;
+    margin: 5px;
 }
 .div1{
     background-color: seagreen;
@@ -163,6 +164,132 @@ body{
     clear: both;
 }
 
+/* link style ปกติ เคยกด เอาเมาส์ชี้ กดค้าง */
+.noneline{
+    font-size: 20px;
+    text-decoration: none;
+}
+a:link{
+    color: brown;
+}
+a:visited{
+    color: darkorange;
+}
+a:hover{
+    text-decoration: underline;
+    color: darkorchid;
+    background-color: darkseagreen;
+}
+a:active{
+    background-color: deepskyblue;
+    color: maroon;
+}
+
+/* Display (none ไม่แสดง inline แนวนอน block แนวตั้ง inline-block แนวนอนขยายพื้นที่ด้านใน)
+   Block(เต็มบรรทัด) -> form nav aside ol ul li div p h1-h6 table thead tfoot header main section article footer blockqoute 
+                      canvas dd dl dt fieldset figcaption figure hr noscript pre video address
+   Inline(เท่าเนื้อหา) -> a br button img input label object output script span strong time textarea sub sup small 
+                       big em map var cite kbd dfn em abbr acronym bdo
+*/
+.li-style{
+    display: inline;
+    padding-right: 20px;
+}
+.displaybox{
+    width: 30%;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    margin: 10px;
+    display: inline-block;
+}
+
+/* visibility ไม่กระทบ layout*/
+.img-invis{
+    visibility: hidden;
+}
+
+/* position
+    static      แบบปกติ   
+    relative    นับจากจุดที่วัตถุนั้นอยู่
+    absolute    กำหนดตำแหน่งจากขอบ element ที่ครอบ (ถ้าไม่มีคือ body)
+    fixed       อยู่ตำแหน่งเดิม
+    sticky      ติดขอบเมื่อเลื่อนไปถึง
+ */
+.pos-box{
+     width: 100px;
+     height: 100px;
+}
+#posbox-1{
+     background-color: maroon;
+     position: relative;
+     left: 60px;
+     top: 50px;
+     z-index: 1;    /* ย้ายเลเยอร์ box1 มาด้านหน้า */
+}
+#posbox-2{
+     background-color: skyblue;
+     position: absolute;
+     top: 60px;
+     left: 300px;
+}
+#posbox-3{
+     background-color: olive;
+     position: absolute;
+     top: 10px;
+     left: 180px;
+}
+#posbox-4{
+     background-color: peru;
+     position: fixed;
+     top: 0;
+     right: 0;
+}
+#posbox-5{
+     background-color: purple;
+     position: sticky;
+     bottom: 0;
+}
+.pos-container{
+    position: relative;
+    width: 500px;
+    height: 200px;
+    background-color: #333;
+}
+.posbox-close{
+    background-color: snow;
+}
+
+/* overflow จำกัดการแสดงผล visible แสดง hidden ซ่อนที่เกิน scroll เลื่อนเนื้อหาส่วนเกิน*/
+.flow-div{
+    width: 300px;
+    height: 100px;
+    border: dashed 2px sienna;
+    overflow: scroll;
+}
+
+.img2{
+    height: 300px;
+    width: auto;
+    margin: 10px;
+}
+
+/* cursor style */
+.hovercursor{
+    cursor: progress;
+}
+
+/* box-shadow : x(+ขวา -ซ้าย) y(+ล่าง -บน) blur(ขนาดความมัว) spread(ขนาดเงา) color(สีเงา) */
+.boxshadow1{
+    box-shadow: 10px 10px 10px 5px grey ;
+}
+
+/* opacity ความทึบ*/
+.boxopacity1{
+    opacity: 0.5;
+}
+.boxopacity2{
+    opacity: 0.8;
+}
 
 
 
