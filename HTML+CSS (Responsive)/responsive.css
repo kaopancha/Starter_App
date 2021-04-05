@@ -1,0 +1,73 @@
+.responsive{
+    color: white;
+    text-align: center;
+    display: none;
+}
+/* responsive (max-width max-height) smartphone */ 
+@media only screen and (max-width:500px){
+    body{
+        background-color: darkmagenta;
+    }
+    #smartphone{
+        display: block;
+    }
+}
+/* tablets */
+@media (min-width:501px) and (max-width:768px){
+    body{
+        background-color: teal;
+    }
+    #tablets{
+        display: block;
+    }
+}
+/* laptop desktop */
+@media (min-width:769px) and (max-width: 1200px){
+    body{
+        background-color: brown;
+    }
+    #laptop{
+        display: block;
+    }
+}
+/* widescreen */
+@media (min-width: 1201px) {
+    body{
+        background-color: #f4f4f4f4;
+    }
+    #widescreen{
+        display: block;
+        color: black;
+    }
+}
+/* landscape */
+@media (max-height: 500px) {
+    body{
+        background-color: forestgreen;
+    }
+    #landscape{
+        display: block;
+    }
+}
+
+/* Viewport สัดส่วน % ของจอที่แสดงผล */
+*{
+    box-sizing: border-box;
+}
+header{
+    background-color: #333;
+    color: gainsboro;
+    height: 30vh;
+    width: 100vw;
+    text-align: center;
+}
+header h1{
+    font-size: 3rem;
+}
+.alink{
+    display: inline-block;
+    text-decoration: none;
+    background-color: white;
+    color: #333;
+    padding: 0.75rem;
+}
