@@ -71,3 +71,58 @@ header h1{
     color: #333;
     padding: 0.75rem;
 }
+
+/* flexbox ใช้จัดการ element กำหนดขนาดให้พอดีกับพื้นที่ว่างอัตโนมัติ
+    flex-direction กำหนดทิศทางการเรียง
+    flex-wrap จัด item ที่เกินให้อยู่ในพื้นที่ container
+    flex-shrink หดตัวได้กี่เท่า เมื่อเทียบกับ item อื่น
+    flex-grow ขยายตัวได้กี่เท่า
+    flex-basis กำหนดค่าความยืดหยุ่นเริ่มต้น
+    flex:1 ให้ item เต็มพื้นที่ container พอดี
+*/
+.flex-container{
+    display: flex;
+    background-color: cornflowerblue;
+    flex-direction: row;
+}
+.item{
+    background-color: orange;
+    border: solid 1px black;
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+.item-1{
+    flex-shrink: 2;
+}
+.item-2{
+    flex-grow: 3;
+}
+.item-3{
+    flex-basis: 300px;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
+.flex-1{
+    flex: 1;
+}
+
+/* justify-content จัดวางตำแหน่งเทียบแกนหลัก
+    flex-start ชิดซ้าย    center กึ่งกลาง   flex-end ชิดขวา
+    space-around ห่างซ้ายขวาเท่ากัน     space-between ติดมุม
+*/
+.justify-1{
+    justify-content: space-around;
+}
+
+/* alignment จัดวางตำแหน่งเทียบแกนตรงข้าม */
+.align-1{
+    height: 30vh;
+    align-items: center;
+}
+.align-2{
+    align-self: flex-start;
+}
