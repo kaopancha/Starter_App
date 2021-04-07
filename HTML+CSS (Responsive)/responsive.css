@@ -26,7 +26,7 @@
     body{
         background-color: brown;
     }
-    #laptop{
+    #normal{
         display: block;
     }
 }
@@ -103,11 +103,11 @@ header h1{
 .item-3{
     flex-basis: 300px;
 }
-.flex-wrap{
-    flex-wrap: wrap;
-}
 .flex-1{
     flex: 1;
+}
+.flex-wrap{
+    flex-wrap: wrap;
 }
 
 /* justify-content จัดวางตำแหน่งเทียบแกนหลัก
@@ -125,4 +125,75 @@ header h1{
 }
 .align-2{
     align-self: flex-start;
+}
+
+/* Grid layout 2มิติ แถว+คอลัมน์ */
+.grid-container{
+    display: grid;
+    grid-template-rows: repeat(3,auto);
+    /* grid-template-columns: 100px auto 200px; */
+    /* grid-template-columns: repeat(3,auto); */
+    /* หน่วย fr แบ่งเป็นสัดส่วน */
+    grid-template-columns: repeat(3,1fr);
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+}
+.grid-item{
+    background-color: orange;
+    border: solid 1px white;
+    text-align: center;
+    padding: 30px;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+/* ใช้นับตำแหน่งเส้น */
+.grid-item:first-child{
+    background-color: yellowgreen;
+    /* grid-column-start: 1;
+    grid-column-end: 4; */
+    grid-column: 1/4;
+}
+.grid-item:last-child{
+    background-color: violet;
+    grid-column: 2/4;
+    grid-row: 4/8;
+}
+/* ใช้ span นับตำแหน่งช่อง*/
+.grid-item:nth-child(2){
+    background-color: tomato;
+    grid-row: 2/span 2;
+    grid-column: 1/span 2;
+}
+/* Grid-template-area */
+.grid-container-area{
+    display: grid;
+    /* grid-template-columns: 1fr 3fr;
+    grid-template-rows: 3fr 10fr 2fr;
+    grid-template-areas:
+    'header header'
+    'sidebar content'
+    'footer footer'
+    ; */
+    grid-template:
+    'header header' 3fr
+    'sidebar content' 10fr
+    'footer footer' 2fr
+    /1fr 3fr;
+    font-size: 1.5rem;
+}
+.header-item{
+    background-color: yellowgreen;
+    grid-area: header;
+}
+.sidebar-item{
+    background-color: powderblue;
+    grid-area: sidebar;
+}
+.content-item{
+    background-color: tomato;
+    grid-area: content;
+}
+.footer-item{
+    background-color: violet;
+    grid-area: footer;
 }
