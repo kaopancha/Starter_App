@@ -197,3 +197,62 @@ header h1{
     background-color: violet;
     grid-area: footer;
 }
+
+/* Targeted Selectors */
+/* decendant (ทั้งหมดใน tag)*/
+div p{
+    background-color: greenyellow;
+}
+/* child (เฉพาะชั้นถัดจาก tag) */
+div>p{
+    background-color: indianred;
+}
+
+/* style by attribute */
+a[target]{
+    background-color: maroon;
+    color: white;
+}
+a[target='_blank']{
+    background-color: #333;
+    color: white;
+}
+
+/* special attribute */
+input[type='email'] , input[type='text']{
+    width: 50%;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+/* pseudo */
+.li-child{
+    padding: 0.25rem;
+    margin: 0.25rem;
+    list-style: none;
+}
+.li-child:first-child{
+    background-color: yellowgreen;
+}
+.li-child:last-child{
+    background-color: tomato;
+}
+.li-child:nth-child(even){
+    background-color: cornflowerblue;
+}
+.li-child:nth-child(2n+3){
+    background-color: var(--theme-color);
+}
+.is-required::after{
+    content: "*";
+    color: red;
+    padding: 5px;
+}
+
+/* CSS variable */
+:root{
+    --border-box: 1px solid red;
+    --theme-color: crimson;
+}
+

@@ -285,11 +285,105 @@ a:active{
 
 /* opacity ความทึบ*/
 .boxopacity1{
-    opacity: 0.5;
+    opacity: 0.3;
 }
 .boxopacity2{
     opacity: 0.8;
 }
 
+/* text-shadow : x y blur color */
+.h1-shadow{
+    text-shadow: 2px 5px 5px black;
+}
+
+/* transform ย้ายตำแหน่ง หมุน ขยาย เอียง*/
+.img-transform{
+    /* transform: translate(600px,10px); */
+    /* transform: rotate(100deg); */
+    /* transform: scale(2,1); */
+    transform: skew(10deg,10deg);
+}
+
+/* transition */
+.box-transition{
+    width: 100px;
+    height: 100px;
+    background-color: crimson;
+    color: crimson;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    
+    /* transition-property: opacity;
+    transition-duration: 3s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 2s; */
+    transition:  background-color 3s, color 3s, width 1s ease-in 2s;
+}
+.box-transition:hover{
+    background-color: #333;
+    color: white;
+    width: 500px;
+}
+
+/* animation */
+.box-animation{
+    background-color: greenyellow;
+    color: greenyellow;
+    width: 100px;
+    height: 200px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* animation-name: box-animate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in; */
+
+    position: relative;
+    animation-name: box-animate2;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+@keyframes box-animate {
+    from {
+        width: 100px;
+        color: greenyellow;
+    }
+    to{
+        width: 500px;
+        color: crimson;
+    }
+}
+@keyframes box-animate2 {
+    0% {
+        top:0px;
+        left:0px;
+    }
+    25% {
+        top:0px;
+        left:300px;
+        color: crimson;
+    }
+    50% {
+        top:-300px;
+        left:300px;
+        width: 200px;
+    }
+    75% {
+        top:-300px;
+        left:0px;
+        width: 300px;
+    }
+    100% {
+        top:0px;
+        left:0px;
+    }
+}
 
 
