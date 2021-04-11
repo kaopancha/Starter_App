@@ -189,6 +189,72 @@ function changeText(){
     document.getElementById('title1').innerHTML = "<strong>เปลี่ยนข้อความเรียบร้อย</strong>"
     // เปลี่ยน style
     getbyID.style.backgroundColor="Black"
-    // set Attribute เปลี่ยน class
+    // set Attribute
     getbyID.setAttribute('class','changeclass1 changeclass2')
+}
+
+// DOM Node
+const textAll = document.querySelectorAll('p')
+console.log(textAll[0], textAll[1].innerHTML)
+
+// เพิ่ม/ลบ/แทนที่ Node ลูก(Child)
+let childCount = 1
+const menu = document.getElementById('menu')
+function addItem(){
+    const item = document.createElement('li')
+    item.innerText = "Item " + (childCount)
+    item.id = "item-" + (childCount++)
+    menu.appendChild(item)
+}
+function removeItem(){
+    if(menu.childElementCount <= 0)
+    {
+        alert('ไม่มี Item เหลืออยู่ใน menu')
+    }else{
+        let itemID = "item-" + (--childCount)
+        const item = document.getElementById(itemID)
+        menu.removeChild(item)
+    }
+}
+function replaceItem(){
+    const item = document.getElementById('item-1')
+    const newItem = document.createElement('li')
+    newItem.innerText = "Replace Item"
+    newItem.id = 'item-1'
+    menu.replaceChild(newItem,item)
+}
+
+// DOM CSS เพิ่ม/ลบ/สลับ(เปิด,ปิด) class
+const css_box = document.getElementById('dom-css-box')
+function addDarkmode(){
+    css_box.classList.add('darkmode')
+}
+function removeDarkmode(){
+    css_box.classList.remove('darkmode')
+}
+function switchMode(){
+    css_box.classList.toggle('darkmode')
+
+    // ตัวอย่างการใช้งาน เปรียบเทียบ
+    if(css_box.classList.contains('darkmode')){
+        css_box.style.color = "yellow"
+    }else{
+        css_box.style.color = "blue"
+    }
+}
+
+// DOM Event ตัวอย่าง
+function highlight(obj){
+    obj.style.backgroundColor = "yellow"
+}
+function unhighlight(obj){
+    obj.style.backgroundColor = "black"
+}
+
+// EventListener คล้าย DOM Event แต่เขียนใน JS ทั้งหมด สะดวกกว่าไปแทรกใน HTML
+const menulan = document.getElementById('menu-lan')
+menulan.addEventListener('change',getMenulan)
+
+function getMenulan(){
+    console.log(menulan.value)
 }

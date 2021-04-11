@@ -14,8 +14,46 @@
     <button onclick="showHello()">แสดง Hello</button>
     <button onclick="displaySum()">ผลรวมเลข 1 ถึง 100</button>
     <button id="buttonDel" onclick="deleteData()">ลบข้อมูล</button>
+
     <div id="title1">เริ่มต้นการทดสอบเปลี่ยนข้อความ</div>
     <button onclick="changeText()">เปลี่ยนข้อความ</button>
+
+    <p>HTML</p>
+    <p>CSS</p>
+    <p>JavaScript</p>
+    
+    <button onclick="addItem()">เพิ่ม Item</button>
+    <button onclick="removeItem()">ลบ Item</button>
+    <button onclick="replaceItem()">แทนที่ Item</button>
+    <ul id="menu">Menu</ul>
+
+    <button onclick="addDarkmode()">เพิ่ม Style</button>
+    <button onclick="removeDarkmode()">ลบ Style</button>
+    <button onclick="switchMode()">สลับ Style</button>
+    <div id="dom-css-box" class="">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia ducimus iure veritatis ipsum tempora doloremque, ullam quis dolores incidunt consectetur sunt voluptas eius blanditiis deleniti aliquid? Blanditiis culpa ratione distinctio.</p>
+    </div>
+    
+    <!-- DOM Event 
+        onfocus         โฟกัส            -> select, text, textarea
+        onblur          ย้ายโฟกัส         -> select, text, textarea
+        onchange        เปลี่ยนแปลงค่า     -> select, text, textarea
+        onselect        คลิกคลุม          -> text, textarea
+        onsubmit        คลิก submit      -> form
+        onMouseover     เมาส์ไปวาง        -> a, div
+        onMouseout      เอาเมาส์ออก       -> a, div
+        onclick         ถูกคลิก           -> a, button, checkbox, radio, resey, submit
+        onload          โหลดเอกสารเสร็จ   -> body
+        onunload        ยกเลิกโหลด(stop) -> body 
+    -->
+    <input type="text" placeholder="onfocus Textbox" onfocus="highlight(this)" onblur="unhighlight(this)">
+    
+    <select id="menu-lan">
+        <option value="" disabled selected>เลือกหนึ่งอย่าง</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="Python">Python</option>
+        <option value="Ruby">Ruby</option>
+    </select>
 
     <script src="app.js"></script>
 </body>
