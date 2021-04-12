@@ -50,6 +50,10 @@
     }
 }
 
+
+
+
+
 /* Viewport สัดส่วน % ของจอที่แสดงผล */
 *{
     box-sizing: border-box;
@@ -197,6 +201,11 @@ header h1{
     background-color: violet;
     grid-area: footer;
 }
+
+
+
+
+
 
 /* Targeted Selectors */
 /* decendant (ทั้งหมดใน tag)*/

@@ -61,6 +61,11 @@ h1#title{
     background-color: darkgoldenrod;
 }
 
+
+
+
+
+
 /* รูปแบบ ขนาด น้ำหนัก สี พื้นหลัง สไตล์ ลักษณะ fonts */
 .font1{
     font-family: monospace;
@@ -185,6 +190,11 @@ a:active{
     color: maroon;
 }
 
+
+
+
+
+
 /* Display (none ไม่แสดง inline แนวนอน block แนวตั้ง inline-block แนวนอนขยายพื้นที่ด้านใน)
    Block(เต็มบรรทัด) -> form nav aside ol ul li div p h1-h6 table thead tfoot header main section article footer blockqoute 
                       canvas dd dl dt fieldset figcaption figure hr noscript pre video address
@@ -272,6 +282,11 @@ a:active{
     width: auto;
     margin: 10px;
 }
+
+
+
+
+
 
 /* cursor style */
 .hovercursor{
