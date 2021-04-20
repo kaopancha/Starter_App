@@ -1,3 +1,6 @@
+*{
+    font-family: 'Itim', cursive;
+}
 @media only screen and (max-width:500px){
     .carousel-item{
         height: 40vh;
@@ -6,6 +9,9 @@
 @media (min-width: 501px) {
     .carousel-item{
         height: 85vh;
+    }
+    .carousel-image-3{
+        background-position: center;
     }
 }
 .carousel-image-1{
@@ -20,10 +26,26 @@
 .carousel-image-3{
     background-image: url('image/pic3.jpg');
     background-size: cover;
-    background-position: center;
 }
 .carousel-image-4{
     background-image: url('image/pic4.jpg');
     background-size: cover;
     background-position: center;
+}
+#about{
+    min-height: 200px;
+    position: relative;
+    background-image: url('https://cdn.pixabay.com/photo/2015/07/02/10/13/sky-828648_960_720.jpg');
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+    background-attachment: fixed;
+}
+.dark-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
 }
