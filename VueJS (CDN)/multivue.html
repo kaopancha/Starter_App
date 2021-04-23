@@ -23,29 +23,62 @@
     
     <!-- multiple Vue -->
     <div class="container m-3">
+        <div id="likeSystem" class="mt-3">
+            <button class="btn btn-info" v-on:click="addLike">Like</button>
+            <div class="h4 alert-danger col-1 text-center mt-3">{{like}}</div>
+        </div>
+        <hr>
+
+        <!-- Component -->
+        <h3>สร้าง Component</h3>
+        <div id="customtag">
+            <showview title="View Count" v-bind:view="100"></showview>
+        </div>
+        <hr>
+
+        <!-- Data & Component -->
         <div id="post">
-            <h3>หัวข้อ : {{title}} </h3>
-            <div class="fs-5">เนื้อหา : {{message}}</div> 
+            <h3>หัวข้อ : กระดานสนทนา </h3>
+            <div class="fs-5">เนื้อหา : พูดคุยทั่วไป</div> 
         </div>
 
         <div id="comment">
             <ul class="list-group list-group-flush w-50">
-                <li class="list-group-item list-group-item-dark" v-for="uc in userComment">{{uc.user}} : {{uc.com}}</li>
+                <showcomment v-for="uc in userComment" v-bind:commentpost="uc"></showcomment>
             </ul>
             <br>
             <form action="#">
                 <span>ชื่อผู้ใช้</span>
                 <input v-model="newComment.user" class="form-control w-25"><br>
                 <span>ข้อความ</span>
-                <textarea cols="30" rows="5" v-model="newComment.com" class="w-50 form-control"></textarea><br>
+                <textarea cols="30" rows="5" v-model="newComment.com" v-on:keyup.enter="addComment" class="w-50 form-control"></textarea><br>
                 <button class="btn btn-success" @click="addComment">ส่งข้อความ</button>
             </form>
         </div>
+        <hr>
 
-        <div id="likeSystem" class="mt-3">
-            <button class="btn btn-info" v-on:click="addLike">Like</button>
-            <div class="h4 alert-danger col-1 text-center mt-3">{{like}}</div>
+        <!-- Slots -->
+        <div id="vueSlots">
+            <foodApp>
+                <h4>อาหารอีสาน</h4>
+                <ul>
+                    <li>ลาบ</li>
+                    <li>ส้มตำ</li>
+                </ul>
+            </foodApp>
+            <foodApp>
+                <h4>อาหารใต้</h4>
+                <ul>
+                    <li>แกงเหลือง</li>
+                    <li>แกงไตปลา</li>
+                </ul>
+            </foodApp>
         </div>
+        <template id="foodarea">
+            <div id="food">
+                <slot></slot>
+            </div>
+        </template>
     </div>
     
     <script src="multiapp.js"></script>

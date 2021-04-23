@@ -1,9 +1,38 @@
-let post = new Vue({
-    el: "#post",
+let likeSystem = new Vue({
+    el: "#likeSystem",
     data:{
-        title: 'กระดานสนทนา',
-        message: 'พูดคุยทั่วไป',
+        like: 0
+    },
+    methods:{
+
+        addLike: function(){
+            return this.like++
+        }
     }
+})
+
+// Custom tag (Component)
+Vue.component('showview',{
+    props:{
+        title:{
+            type: String,
+            required: true
+        },
+        view:{
+            type: Number,
+            default: 0
+        }
+    },
+    template:'<h4 class="alert-warning col-2">{{title}} : {{view}} </h4>'
+})
+let customtag = new Vue({
+    el: "#customtag"
+})
+
+// Data & Component
+Vue.component('showcomment',{
+    props:['commentpost'],
+    template:'<li class="list-group-item list-group-item-dark">{{commentpost.user}} : {{commentpost.com}}</li>'
 })
 let comment = new Vue({
     el: "#comment",
@@ -24,17 +53,15 @@ let comment = new Vue({
             this.newComment.com = ''
         }
     }
-
 })
-let likeSystem = new Vue({
-    el: "#likeSystem",
-    data:{
-        like: 0
-    },
-    methods:{
 
-        addLike: function(){
-            return this.like++
-        }
+// Slots
+var food={
+    template:'#foodarea'
+}
+new Vue({
+    el: "#vueSlots",
+    components:{
+        foodapp:food
     }
 })
