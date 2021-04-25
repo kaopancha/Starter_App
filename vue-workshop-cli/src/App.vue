@@ -31,7 +31,7 @@
       <h2 class="text-center alert-info mt-4">Workshop #3 คำนวณราคาสินค้า</h2>
       <hr>
       <div class="row">
-        <div class="col-md-4 mb-3" v-for="item in product" :key="item">
+        <div class="col-md-4 mb-3" v-for="(item, itemid) in product" :key="itemid">
           <div class="card h-100">
             <img v-bind:src="item.image" class="card-img-top">
             <div class="card-body">
@@ -53,7 +53,7 @@
         <!-- products -->
         <div class="col-md-6 mb-3">
           <div class="row">
-            <div class="col-md-4 mb-3" v-for="product in product" :key="product">
+            <div class="col-md-4 mb-3" v-for="(product , proid) in product" :key="proid">
               <div class="card h-100">
                 <img v-bind:src="product.image" class="card-img-top">
                 <div class="card-body">
