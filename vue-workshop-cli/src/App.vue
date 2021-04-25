@@ -97,7 +97,7 @@
               </tr>
             </tbody>
           </table>
-
+          <h4 align="right">ยอดชำระเงิน {{totalProduct()}} บาท</h4>
         </div>
       </div>
     </div>
@@ -305,6 +305,13 @@ export default {
           this.cupcake = 0
         }
       }
+    },
+    totalProduct(){
+      let total = 0
+      this.cart.forEach(function(product){
+        total += product.total
+      })
+      return total
     }
   }
 }
