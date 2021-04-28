@@ -80,7 +80,53 @@
             </div>
         </template>
     </div>
-    
-    <script src="multiapp.js"></script>
+    <hr>
+
+    <!-- VueJS + Firebase Database -->
+    <div class="container col-md-6 m-3" id="chatbox">
+        <h2>Vue.js + Firebase Tutorial</h2>
+        <div class="card">
+            <div class="card-body bg-dark text-white">
+                <h5 class="card-title"></h5>
+                <p class="card-text text-muted"></p>
+            </div>
+        </div>
+        <br>
+        <form class="form-group" @submit.prevent="storeMessage">
+            <label for="">ชื่อผู้ใช้</label>
+            <input type="text" class="form-control" v-model="name">
+            <label for="">แสดงความคิดเห็น</label>
+            <textarea name="" id="" class="form-control" v-model="messageText"></textarea><br>
+            <button type="submit" class="btn btn-primary">ส่ง</button>
+        </form>
+    </div>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCHbngPrGRFO2Q88n-QizVbCRyzIXACeNw",
+    authDomain: "vuejsproject-a109e.firebaseapp.com",
+    databaseURL: "https://vuejsproject-a109e-default-rtdb.firebaseio.com",
+    projectId: "vuejsproject-a109e",
+    storageBucket: "vuejsproject-a109e.appspot.com",
+    messagingSenderId: "596092691566",
+    appId: "1:596092691566:web:02e1fb3ac0f3548e0c727f",
+    measurementId: "G-79P8L7KNH5"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src="multiapp.js"></script>
+
 </body>
 </html>

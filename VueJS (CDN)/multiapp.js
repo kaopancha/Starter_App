@@ -65,3 +65,26 @@ new Vue({
         foodapp:food
     }
 })
+
+// Vue + firebase
+// manage database
+var database = firebase.database()
+const messageRef = database.ref("chatbox")
+
+new Vue({
+    el: "#chatbox",
+    data:{
+        messageText: "",
+        messageGroup: [],
+        name: "Anonymous"
+    },
+    methods:{
+        storeMessage: function(){
+            messageRef.push({text: this.messageText, name: this.name})
+            this.messageText = ""
+        }
+    },
+    created(){
+
+    }
+})
