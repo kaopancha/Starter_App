@@ -76,15 +76,45 @@ new Vue({
     data:{
         messageText: "",
         messageGroup: [],
-        name: "Anonymous"
+        name: "ChatAdmin",
+        editText: null
     },
     methods:{
         storeMessage: function(){
             messageRef.push({text: this.messageText, name: this.name})
             this.messageText = ""
+        },
+        deleteMessage: function(messageID){
+            messageRef.child(messageID).remove()
+        },
+        editMessage: function(message){
+            this.editText = message
+            this.messageText = message.text
+        },
+        cancelMessage: function(){
+            this.editText = null
+            this.messageText = ""
+        },
+        updateMessage: function(){
+            messageRef.child(this.editText.id).update({text:this.messageText})
+            this.cancelMessage()
         }
     },
     created(){
-
+        // หลังเพิ่มข้อมูล หรือ นำข้อมูลในฐานข้อมูลไปแสดง
+        messageRef.on('child_added', snapshot => {
+            this.messageGroup.push({...snapshot.val(), id:snapshot.key})
+        })
+        // หลังลบข้อมูล
+        messageRef.on('child_removed', snapshot => {
+            const deleteText = this.messageGroup.find(message => message.id == snapshot.key)
+            const index = this.messageGroup.indexOf(deleteText)
+            this.messageGroup.splice(index,1)
+        })
+        // หลังแก้ไขข้อมูล
+        messageRef.on('child_changed', snapshot => {
+            const updateText = this.messageGroup.find(message => message.id == snapshot.key)
+            updateText.text = snapshot.val().text
+        })
     }
 })

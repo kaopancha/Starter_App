@@ -86,15 +86,24 @@
     <div class="container col-md-6 m-3" id="chatbox">
         <h2>Vue.js + Firebase Tutorial</h2>
         <div class="card">
-            <div class="card-body bg-dark text-white">
-                <h5 class="card-title"></h5>
-                <p class="card-text text-muted"></p>
+            <div class="card-body bg-dark text-white" v-for="message in messageGroup">
+                <h5 class="card-title" v-if="message!=editText">{{message.text}}</h5>
+                <textarea v-else name="" id="editText" class="form-control" v-model="messageText"></textarea>
+                <p class="card-text text-muted">{{message.name}}</p>
+                <div v-if="message!=editText">
+                    <a href="#" class="card-link text-warning" @click.prevent="editMessage(message)">แก้ไข</a>
+                    <a href="#" class="card-link text-danger" @click.prevent="deleteMessage(message.id)">ลบ</a>
+                </div>
+                <div v-else>
+                    <a href="#" class="card-link text-warning" @click.prevent="updateMessage()">อัพเดท</a>
+                    <a href="#" class="card-link text-danger" @click.prevent="cancelMessage()">ยกเลิก</a>
+                </div>
             </div>
         </div>
         <br>
-        <form class="form-group" @submit.prevent="storeMessage">
+        <form v-if="!editText" class="form-group" @submit.prevent="storeMessage">
             <label for="">ชื่อผู้ใช้</label>
-            <input type="text" class="form-control" v-model="name">
+            <input type="text" class="form-control" v-model="name" required>
             <label for="">แสดงความคิดเห็น</label>
             <textarea name="" id="" class="form-control" v-model="messageText"></textarea><br>
             <button type="submit" class="btn btn-primary">ส่ง</button>
