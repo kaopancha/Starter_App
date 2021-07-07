@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Write Article</title>
+    <!-- ckeditor -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js"></script>
 </head>
 <body>
     <%- include layout %>
     <div class="container mt-3">
         <h2 class="text-center">เขียนบทความ</h2>
-        <form action="" method="post">
+
+        <form action="/blog/add" method="post">
             <div class="form-group mb-3">
                 <label class="form-label" for="">ชื่อบทความ</label>
                 <input type="text" name="articleName" value="" class="form-control">
@@ -21,10 +24,18 @@
             </div>
             <div class="form-group mb-3">
                 <label class="form-label" for="">รายละเอียด</label>
-                <textarea name="articleDesc" id="" cols="80" rows="8" class="form-control"></textarea>
+                <textarea name="articleDesc" id="articleDesc" class="form-control"></textarea>
             </div>
             <input type="submit" class="btn btn-success" value="บันทึกบทความ">
         </form>
     </div>
+
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#articleDesc' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
 </body>
 </html>
