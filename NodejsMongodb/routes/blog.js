@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 /* express validator (check request)*/ 
-const { body, validationResult } = require('express-validator');
+const { body, validationResult, check } = require('express-validator');
 
 /* GET all products. */
 router.get('/', function(req, res, next) {
@@ -13,14 +13,15 @@ router.get('/add', function(req, res, next) {
 });
 
 router.post(
-    '/add',
-    body("articleName","กรุณาระบุชื่อบทความ").not().isEmpty(),
-    body("articleDesc","กรุณาระบุรายละเอียดบทความ").not().isEmpty(),
-    body("writerName","กรุณาระบุชื่อผู้เขียน").not().isEmpty(),
-    function(req, res, next) {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      console.log(errors);
+    '/add', [
+    check("articleName","กรุณาระบุชื่อบทความ").not().isEmpty(),
+    check("articleDesc","กรุณาเพิ่มเนื้อหาบทความ").not().isEmpty(),
+    check("writerName","กรุณาระบุชื่อผู้เขียน").not().isEmpty(),
+    ], function(req, res, next) {
+    const result = validationResult(req);
+    var errors = result.errors;
+    if (!result.isEmpty()) {
+      res.render('addblog',{sendErrors:errors})
     }
     else{
         // insert to db

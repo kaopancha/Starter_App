@@ -12,6 +12,13 @@
     <%- include layout %>
     <div class="container mt-3">
         <h2 class="text-center">เขียนบทความ</h2>
+        <% if(locals.sendErrors){ %>
+        <ul class="alert alert-danger">
+            <% Object.values(sendErrors).forEach(function(error){ %>
+                <li><%= error.msg %></li>
+            <% }) %>
+        </ul>
+        <% } %>
 
         <form action="/blog/add" method="post">
             <div class="form-group mb-3">
